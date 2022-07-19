@@ -26,13 +26,45 @@ const DetailsListItem = ({
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Status</h4>
-        <div className="details-item__highlight details-item__highlight--green">
-          <h4 className="details-item__stock">{status}</h4>
+        <div
+          className={`details-item__highlight details-item__highlight--mobile ${
+            status === "In stock"
+              ? "details-item__highlight--green"
+              : "details-item__highlight--red"
+          }`}
+        >
+          <h4
+            className={`details-item__stock ${
+              status === "In stock"
+                ? "details-item__stock--green"
+                : "details-item__stock--red"
+            }`}
+          >
+            {status}
+          </h4>
         </div>
+        <p2 className="details-item__category--tablet">{category}</p2>
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Category</h4>
-        <p2>{category}</p2>
+        <p2 className="details-item__category--mobile">{category}</p2>
+        <div
+          className={`details-item__highlight details-item__highlight--tablet ${
+            status === "In stock"
+              ? "details-item__highlight--green"
+              : "details-item__highlight--red"
+          }`}
+        >
+          <h4
+            className={`details-item__stock ${
+              status === "In stock"
+                ? "details-item__stock--green"
+                : "details-item__stock--red"
+            }`}
+          >
+            {status}
+          </h4>
+        </div>
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Qty</h4>
@@ -50,8 +82,16 @@ const DetailsListItem = ({
         </>
       )}
       <div className="details-item__bottom-section">
-        <img src={deleteIcon} alt="delete icon" />
-        <img src={editIcon} alt="edit icon" />
+        <img
+          className="details-item__action-button"
+          src={deleteIcon}
+          alt="delete icon"
+        />
+        <img
+          className="details-item__action-button"
+          src={editIcon}
+          alt="edit icon"
+        />
       </div>
     </section>
   );
