@@ -2,6 +2,7 @@
 @use "./typography";
 @use "./mixins";
 
+
 *,
 *::after,
 *::before {
@@ -9,10 +10,16 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
   color: colors.$primaryDarkColor;
+  background-color: colors.$backgroundLightColor;
 }
+
 // Page header h1,
 h1 {
   @include mixins.mobile-page-header;
@@ -69,3 +76,4 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
