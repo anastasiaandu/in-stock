@@ -1,0 +1,79 @@
+@use "./colors";
+@use "./typography";
+@use "./mixins";
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Titillium Web';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  color: colors.$primaryDarkColor;
+  background-color: colors.$backgroundLightColor;
+}
+
+// Page header h1,
+h1 {
+  @include mixins.mobile-page-header;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-page-header;
+  }
+}
+//Subheader
+h2 {
+  @include mixins.mobile-subheader;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-subheader;
+  }
+}
+// Labels, Links & Buttons
+h3 {
+  @include mixins.mobile-labels-links-buttons;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-labels-links-buttons;
+  }
+}
+// Table Header
+h4 {
+  @include mixins.mobile-table-header;
+  text-transform: uppercase;
+  color: colors.$secondaryDarkColor;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-table-header;
+  }
+}
+
+//Body Copy
+p {
+  @include mixins.mobile-body-large;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-body-large;
+  }
+}
+p2 {
+  display: block;
+  @include mixins.mobile-body-medium;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-body-medium;
+  }
+}
+p3 {
+  display: block;
+  @include mixins.mobile-body-small;
+  @include mixins.tablet {
+    @include mixins.tablet-desktop-body-small;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
