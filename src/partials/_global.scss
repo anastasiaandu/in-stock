@@ -37,6 +37,7 @@ h3 {
 // Table Header
 h4 {
   @include mixins.mobile-table-header;
+  text-transform: uppercase;
   color: colors.$secondaryDarkColor;
   @include mixins.tablet {
     @include mixins.tablet-desktop-table-header;
@@ -51,12 +52,14 @@ p {
   }
 }
 p2 {
+  display: block;
   @include mixins.mobile-body-medium;
   @include mixins.tablet {
     @include mixins.tablet-desktop-body-medium;
   }
 }
 p3 {
+  display: block;
   @include mixins.mobile-body-small;
   @include mixins.tablet {
     @include mixins.tablet-desktop-body-small;
