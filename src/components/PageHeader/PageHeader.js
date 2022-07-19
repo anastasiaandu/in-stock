@@ -6,13 +6,13 @@ const PageHeader = () => {
     return (
         <header className='header'>
             <img src={logoImage} alt='in-stock logo' className='header__logo'/>
-            <nav>
-                <ul className='header__nav'>
+            <nav className='header__nav'>
+                <ul className='header__list'>
                     <li>
                         <NavLink
                             to='/'
                             exact
-                            className='header__link header__link--warehouses'
+                            className='header__link-warehouses'
                             activeClassName='header__link--active'
                         >
                             Warehouses
@@ -21,7 +21,7 @@ const PageHeader = () => {
                     <li>
                         <NavLink
                             to='/'
-                            className='header__link'
+                            className='header__link-inventory'
                             activeClassName='header__link--active'
                         >
                             Inventory
