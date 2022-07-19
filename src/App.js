@@ -1,10 +1,14 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import PageHeader from './components/PageHeader/PageHeader';
+import PageFooter from './components/PageFooter/PageFooter';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <PageHeader />
+      <PageFooter />
+    </Router>
   );
 }
 
