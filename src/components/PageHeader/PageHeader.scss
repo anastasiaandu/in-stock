@@ -2,6 +2,12 @@
 @use '../../partials/typography';
 @use '../../partials/mixins';
 
+*,
+* ::before,
+* ::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Titillium Web';
     font-weight: 400;
@@ -57,39 +63,20 @@ body {
     }
 
     &__link-warehouses {
-        text-decoration: none;
-        color: colors.$secondaryLightColor;
-        padding: 0 2.75rem;
-        margin-right: 0.75rem;
-        width: 50%;
-
-        &:hover {
-            text-decoration: underline;
-            color: colors.$primaryLightColor;
-        }
+        @include mixins.navigation-mobile;
 
         @include mixins.tablet {
-            font-size: 0.9rem;
-            padding: 0;
+            @include mixins.navigation-tablet;
         }
 
     }
 
     &__link-inventory {
-        text-decoration: none;
-        color: colors.$secondaryLightColor;
-        padding: 0 2.75rem;
-        margin-left: 0.75rem;
-        width: 50%;
-
-        &:hover {
-            text-decoration: underline;
-            color: colors.$primaryLightColor;
-        }
+        @include mixins.navigation-mobile;
+        margin-left: 1.5rem;
 
         @include mixins.tablet {
-            font-size: 0.9rem;
-            padding: 0;
+            @include mixins.navigation-tablet;
         }
 
         @include mixins.desktop {

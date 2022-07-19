@@ -22,7 +22,7 @@ const PageHeader = () => {
                         <NavLink
                             to='/'
                             className='header__link-inventory'
-                            activeClassName='header__link--active'
+                            // activeClassName='header__link--active'
                         >
                             Inventory
                         </NavLink>
