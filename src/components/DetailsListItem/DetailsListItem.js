@@ -1,6 +1,6 @@
-import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import TextLink from "../TextLink/TextLink";
 import "./DetailsListItem.scss";
 
 const DetailsListItem = ({
@@ -14,15 +14,7 @@ const DetailsListItem = ({
     <section className="details-item">
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Inventory Item</h4>
-        <a className="details-item__text-link">
-          {/* This needs to be changed to a Link*/}
-          <h3>{inventoryItem}</h3>
-          <img
-            className="details-item__chevron-right"
-            src={chevronRight}
-            alt="chevron right"
-          />
-        </a>
+        <TextLink inventoryItem={inventoryItem} />
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Status</h4>

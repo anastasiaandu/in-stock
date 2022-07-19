@@ -11,7 +11,8 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     &:nth-child(4) {
-      // This is the first item in the list
+      // This is the first item in the list (4th children of the parent)  
+      //It cannot be selected with :first-child
       border-top: none;
     }
   }
@@ -31,19 +32,6 @@
         display: none;
       }
     }
-  }
-  &__text-link {
-    color: colors.$primaryButtonColor;
-    display: flex;
-    align-items: center;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  &__chevron-right {
-    width: 1rem;
-    height: 1rem;
-    margin-left: 0.25rem;
   }
   &__highlight {
     display: flex;
