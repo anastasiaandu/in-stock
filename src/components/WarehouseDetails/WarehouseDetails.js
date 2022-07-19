@@ -1,5 +1,6 @@
 import DetailsListItem from "../DetailsListItem/DetailsListItem";
 import NavigationHeader from "../NavigationHeader/NavigationHeader";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./WarehouseDetails.scss";
 
 const WarehouseDetails = (props) => {
@@ -22,6 +23,41 @@ const WarehouseDetails = (props) => {
           <p2>+1 (647) 504 - 0911</p2>
           <p2>glyon@instock.com</p2>
         </div>
+      </section>
+      <section className="warehouse-sort-header">
+        <div className="warehouse-sort-header__section">
+          <h4>Inventory Item</h4>
+          <img
+            className="warehouse-sort-header__sort-icon"
+            src={sortIcon}
+            alt="sort"
+          />
+        </div>
+        <div className="warehouse-sort-header__section">
+          <h4>Category</h4>
+          <img
+            className="warehouse-sort-header__sort-icon"
+            src={sortIcon}
+            alt="sort"
+          />
+        </div>
+        <div className="warehouse-sort-header__section">
+          <h4>Status</h4>
+          <img
+            className="warehouse-sort-header__sort-icon"
+            src={sortIcon}
+            alt="sort"
+          />
+        </div>
+        <div className="warehouse-sort-header__section">
+          <h4>Quantity</h4>
+          <img
+            className="warehouse-sort-header__sort-icon"
+            src={sortIcon}
+            alt="sort"
+          />
+        </div>
+        <h4>Actions</h4>
       </section>
       <DetailsListItem
         inventoryItem="Television"

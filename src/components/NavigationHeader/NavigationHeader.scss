@@ -46,6 +46,7 @@
       display: none;
       @include mixins.tablet {
         display: block;
+        font-family: "Titillium Web";
       }
     }
   }
