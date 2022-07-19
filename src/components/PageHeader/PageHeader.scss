@@ -60,10 +60,10 @@
 
     &__link-inventory {
         @include mixins.navigation-mobile;
-        margin-left: 1.5rem;
 
         @include mixins.tablet {
             @include mixins.navigation-tablet;
+            margin-left: 1.5rem;
         }
 
         @include mixins.desktop {
@@ -74,7 +74,7 @@
     &__link--active {
         color: colors.$primaryLightColor;
         background-color: colors.$primaryDarkColor;
-        padding: 0.5rem 2.95rem;
+        padding: 0.5rem 2.5rem;
         border-radius: 50px;
 
         @include mixins.tablet {
