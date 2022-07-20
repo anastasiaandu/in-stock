@@ -1,7 +1,6 @@
 @use "variables";
 @use "colors";
 
-
 @mixin mobile {
   @media screen and (min-width: variables.$mobile-screen) {
     @content;
@@ -19,15 +18,15 @@
 }
 
 @mixin navigation-mobile {
-    text-decoration: none;
-    color: colors.$secondaryLightColor;
-    padding: 0 2.75rem;
-    width: 50%;
-    
-    &:hover {
-        text-decoration: underline;
-        color: colors.$primaryLightColor;
-    }
+  text-decoration: none;
+  color: colors.$secondaryLightColor;
+  padding: 0 2.75rem;
+  width: 50%;
+
+  &:hover {
+    text-decoration: underline;
+    color: colors.$primaryLightColor;
+  }
 }
 
 @mixin navigation-tablet {
@@ -106,4 +105,29 @@
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+//Button
+//Add, submit
+@mixin primary-button {
+  color: colors.$primaryLightColor;
+  background-color: colors.$primaryButtonColor;
+  &:hover {
+    background-color: colors.$backgroundDarkColor;
+  }
+}
+//Cancel
+@mixin secondary-button {
+  background-color: colors.$primaryLightColor;
+  &:hover {
+    color: colors.$primaryButtonColor;
+    border-color: colors.$primaryButtonColor;
+  }
+}
+//Delete
+@mixin delete-button {
+  background-color: colors.$errorColor;
+  color: colors.$primaryLightColor;
+  &:hover {
+    background-color: colors.$backgroundDarkColor;
+  }
 }
