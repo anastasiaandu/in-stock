@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WarehouseForm from "../../components/WarehouseForm/WarehouseForm";
 
+<<<<<<< HEAD
 
 class WarehousePage extends Component {
 
@@ -18,5 +19,12 @@ class WarehousePage extends Component {
     );
   }
 }
+=======
+const WarehousePage = () => {
+  return (
+      <WarehouseForm />
+  );
+};
+>>>>>>> develop
 
 export default WarehousePage;

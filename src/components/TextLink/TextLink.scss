@@ -1,0 +1,15 @@
+@use "../../partials/colors";
+
+.text-link {
+  color: colors.$primaryButtonColor;
+  display: flex;
+  align-items: center;
+  &:hover {
+    text-decoration: underline;
+  }
+  &__chevron-right {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.25rem;
+  }
+}
