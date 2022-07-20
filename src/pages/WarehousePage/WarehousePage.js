@@ -3,9 +3,7 @@ import WarehouseForm from "../../components/WarehouseForm/WarehouseForm";
 
 const WarehousePage = () => {
   return (
-    <div>
       <WarehouseForm />
-    </div>
   );
 };
 
