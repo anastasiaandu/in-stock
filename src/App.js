@@ -1,11 +1,21 @@
-import './App.scss';
-import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
-
+import "./App.scss";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import PageHeader from './components/PageHeader/PageHeader';
+import PageFooter from './components/PageFooter/PageFooter';
+import WarehousePage from "./pages/WarehousePage/WarehousePage";
+//import InventoryPage from "./pages/InventoryPage";
 function App() {
   return (
-    <div className="App">
-      <WarehouseDetails/>
-    </div>
+    <BrowserRouter>
+      <PageHeader />
+      <Switch>
+        <Route path="/" exact component={WarehousePage} />
+        <Route path="/warehouses/:id" component={WarehousePage} />
+        <Route path="/warehouses/:id/edit" component={WarehousePage} />
+        <Route path="/warehouses/add" component={WarehousePage} />
+      </Switch>
+      <PageFooter />
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,7 @@
 @use "variables";
+@use "colors";
+
+
 @mixin mobile {
   @media screen and (min-width: variables.$mobile-screen) {
     @content;
@@ -14,6 +17,24 @@
     @content;
   }
 }
+
+@mixin navigation-mobile {
+    text-decoration: none;
+    color: colors.$secondaryLightColor;
+    padding: 0 2.75rem;
+    width: 50%;
+    
+    &:hover {
+        text-decoration: underline;
+        color: colors.$primaryLightColor;
+    }
+}
+
+@mixin navigation-tablet {
+  font-size: 0.875rem;
+  padding: 0;
+}
+
 //Text Styling
 @mixin mobile-page-header {
   font-size: 1.75rem;
