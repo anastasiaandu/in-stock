@@ -1,117 +1,118 @@
 import React, { Component } from "react";
-
+import NavigationHeader from "../NavigationHeader/NavigationHeader";
+import "./WarehouseForm.scss";
 class WarehouseForm extends Component {
   render() {
     return (
-      <div>
-        <div className="warehouseform__header">
-          <button>back</button>
-          <h1>Edit Warehouse</h1>
-        </div>
-        <form className="warehouseform__form">
-          <div>
-            <h2>Warehouse Details</h2>
-            <label htmlFor="warehouse-name" name="warehouse-name">
-              Warehouse Name
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="warehouse-name"
-              placeholder="Washington"
-            ></input>
-            <label htmlFor="address" name="address">
-              Street Address
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="address"
-              placeholder="33 Pearl Street SW"
-            ></input>
-            <label htmlFor="warehouse-name" name="city">
-              City
-            </label>
-            <input
-              className=""
-              type="text"
-              name="city"
-              placeholder="Washington"
-            ></input>
-            <label htmlFor="warehouse-name" name="country">
-              Country
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="country"
-              placeholder="USA"
-            ></input>
+      <article className="warehouse-form">
+        <NavigationHeader title="Edit Warehouse" showEditButton={false} />
+        <form className="warehouse-form__panel">
+          <div className="warehouse-form__container">
+            <section className="warehouse-form__input-panel">
+              <h2 className="warehouse-form__title">Warehouse Details</h2>
+              <label htmlFor="warehouse-name" name="warehouse-name">
+                Warehouse Name
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="warehouse-name"
+                placeholder="Washington"
+              ></input>
+              <label htmlFor="address" name="address">
+                Street Address
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="address"
+                placeholder="33 Pearl Street SW"
+              ></input>
+              <label htmlFor="warehouse-name" name="city">
+                City
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                name="city"
+                placeholder="Washington"
+              ></input>
+              <label htmlFor="warehouse-name" name="country">
+                Country
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="country"
+                placeholder="USA"
+              ></input>
+            </section>
+            <section className="warehouse-form__input-panel">
+              <h2 className="warehouse-form__title">Contact Details</h2>
+              <label htmlFor="warehouse-name" name="warehouse-name">
+                Contact Name
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="warehouse-name"
+                placeholder="Washington"
+              ></input>
+              <label htmlFor="address" name="address">
+                Position
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="address"
+                placeholder="33 Pearl Street SW"
+              ></input>
+              <label htmlFor="warehouse-name" name="city">
+                Phone Number
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                name="city"
+                placeholder="Washington"
+              ></input>
+              <label htmlFor="warehouse-name" name="country">
+                Email
+              </label>
+              <input
+                className="warehouse-form__input"
+                type="text"
+                onChange=""
+                name="country"
+                placeholder="USA"
+              ></input>
+            </section>
           </div>
-          <div>
-            <h2>Contact Details</h2>
-            <label htmlFor="warehouse-name" name="warehouse-name">
-              Contact Name
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="warehouse-name"
-              placeholder="Washington"
-            ></input>
-            <label htmlFor="address" name="address">
-              Position
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="address"
-              placeholder="33 Pearl Street SW"
-            ></input>
-            <label htmlFor="warehouse-name" name="city">
-              Phone Number
-            </label>
-            <input
-              className=""
-              type="text"
-              name="city"
-              placeholder="Washington"
-            ></input>
-            <label htmlFor="warehouse-name" name="country">
-              Email
-            </label>
-            <input
-              className=""
-              type="text"
-              onChange=""
-              name="country"
-              placeholder="USA"
-            ></input>
-          </div>
-          <div>
+
+          <section className="warehouse-form__button-panel">
             <input
               type="button"
               id="cancel"
-              className=""
+              className="warehouse-form__cancel"
               name="cancel"
-              value="cancel"
+              value="Cancel"
               onClick={() => this.props.history.push("/")}
             />
             <input
               type="button"
               id="submit"
-              className=""
+              className="warehouse-form__submit"
               name="submit"
-              value="submit"
+              value="Save"
             />
-          </div>
+          </section>
         </form>
-      </div>
+      </article>
     );
   }
 }
