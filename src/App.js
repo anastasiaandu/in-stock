@@ -5,6 +5,7 @@ import PageFooter from './components/PageFooter/PageFooter';
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 //import InventoryPage from "./pages/InventoryPage";
+
 function App() {
   return (
     <BrowserRouter>
