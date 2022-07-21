@@ -1,0 +1,11 @@
+@use "../../partials/colors";
+@use "../../partials/mixins";
+
+.warehouses {
+  display: flex;
+  flex-direction: column;
+  background-color: colors.$primaryLightColor;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 0.1875rem;
+  margin-top: -4rem;
+}

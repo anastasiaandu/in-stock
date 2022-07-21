@@ -4,8 +4,13 @@
 .main-container{
     padding: 0 1rem;
     margin-top: -3.75rem;
+
     @include mixins.tablet {
         padding: 0 2rem;
-        margin-top: -6rem;
+        margin-top: -5rem;
+    }
+
+    @include mixins.desktop {
+        padding: 0 8rem;
     }
 }

@@ -1,0 +1,30 @@
+@use '../../partials/global' as *;
+@use '../../partials/colors';
+@use '../../partials/mixins';
+
+
+.warehouses {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    &__search {
+        @include mixins.search;
+        background-image: url('../../assets/icons/search-24px.svg');
+    }
+
+    &__add-button {
+        @include mixins.add-button;
+    }
+}
+
+// padding: 0.75rem 0;
+// font-size: 0.75rem;
