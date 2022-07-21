@@ -69,3 +69,21 @@ a {
   text-decoration: none;
   color: inherit;
 }
+label {
+  @include mixins.mobile-labels-links-buttons;
+}
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  height: 2.25rem;
+  padding: 0 1rem;
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 1.25rem;
+  @include mixins.tablet {
+    height: 2.375rem;
+  }
+}
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid colors.$primaryButtonColor;
+}
