@@ -58,6 +58,7 @@
 }
 
 @mixin add-button {
+  font-family: 'Titillium Web';
   border: none;
   border-radius: 20px;
   background-color: colors.$primaryButtonColor;
@@ -66,6 +67,7 @@
   background-position: 5% center;
   background-size: 1.35rem;
   font-size: 0.8125rem;
+  font-weight: 600;
   height: 2.25rem;
 
   &:hover {

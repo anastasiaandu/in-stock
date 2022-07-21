@@ -8,23 +8,119 @@
         display: flex;
         flex-direction: column;
         padding: 2rem 1.5rem 1.5rem 1.5rem;
+        border-bottom: 1px solid colors.$secondaryLightColor;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 5.5rem;
+            padding: 1.5rem 2rem 1rem 2rem;
+            border: none;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
+
+        @include mixins.tablet {
+            flex-direction: row;
+        }
     }
 
     &__search {
         @include mixins.search;
         background-image: url('../../assets/icons/search-24px.svg');
+
+        @include mixins.tablet {
+            height: 2.375rem;
+            width: 12rem;
+            font-size: 0.875rem;
+        }
+
+        @include mixins.desktop {
+            width: 17rem;
+        }
     }
 
     &__add-button {
         @include mixins.add-button;
+
+        @include mixins.tablet {
+            height: 2.375rem;
+            padding: 0 1rem;
+            margin-left: 1rem;
+            font-size: 0.875rem;
+        }
+    }
+
+    &__table-heads {
+        display: none;
+        
+        @include mixins.tablet {
+            display: flex;
+            justify-content: space-between;
+            background-color: colors.$backgroundLightColor;
+            padding: 0.75rem 2rem;
+        }
+    }
+
+    &__table-heads-left {
+        display: none;
+        
+        @include mixins.tablet {
+            display: flex;
+            width: 88%;
+        }
+    }
+
+    &__heading {
+        display: none;
+        
+        @include mixins.tablet {
+            display: flex;
+            align-items: center;
+            width: 8rem;
+        }
+
+        &--name {
+            width: 8rem;
+            flex-grow: 1;
+        }
+
+        &--address {
+            margin-right: 1.5rem;
+            width: 6rem;
+            flex-grow: 1;
+        }
+
+        &--contact-name {
+            width: 8rem;
+            flex-grow: 1;
+        }
+
+        &--contact-info {
+            max-width: 9rem;
+            flex-grow: 1;
+        }
+    }
+
+    &__actions {
+        display: none;
+        
+        @include mixins.tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__sort-icon {
+        height: 1rem;
+
+        &--active {
+            color: colors.$primaryButtonColor;
+        }
     }
 }
-
-// padding: 0.75rem 0;
-// font-size: 0.75rem;
