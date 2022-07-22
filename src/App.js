@@ -4,7 +4,7 @@ import PageHeader from './components/PageHeader/PageHeader';
 import PageFooter from './components/PageFooter/PageFooter';
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
-//import InventoryPage from "./pages/InventoryPage";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/warehouses/:id" component={WarehouseDetailsPage} />
         <Route path="/warehouses/:id/edit" component={WarehousePage} />
         <Route path="/warehouses/add" component={WarehousePage} />
+        <Route path="/inventory" component={InventoryPage} />
       </Switch>
       </div>
       <PageFooter />

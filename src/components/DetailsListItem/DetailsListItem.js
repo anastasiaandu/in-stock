@@ -64,7 +64,7 @@ const DetailsListItem = ({
       </div>
       {location && (
         <>
-          <div className="details-item__section">
+          <div className="details-item__section details-item__section--spacing">
             {/*Empty section for mobile*/}
           </div>
           <div className="details-item__section">
