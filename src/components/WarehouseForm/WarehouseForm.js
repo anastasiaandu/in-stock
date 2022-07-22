@@ -6,15 +6,15 @@ import errorImg from "../../assets/icons/error-24px.svg";
 class WarehouseForm extends Component {
   state = {
     id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    name: "Manhattan",
+    name: "MAnhattan",
     address: "503 Broadway",
     city: "New York",
     country: "USA",
     contact: {
       name: "Parmin Aujla",
       position: "Warehouse Manager",
-      phone: "+1 (519) 729-8285",
-      email: "paujla@instock.com",
+      phone: "",
+      email: "",
     },
     errorField: {
       name: false,
@@ -30,62 +30,71 @@ class WarehouseForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (!this.state.name) {
-      return this.setState({
+      this.setState({
         errorField: {
           name: true,
         },
       });
     }
     if (!this.state.address) {
-      return this.setState({
+      this.setState({
         errorField: {
           address: true,
         },
       });
     }
     if (!this.state.city) {
-      return this.setState({
+      this.setState({
         errorField: {
           city: true,
         },
       });
     }
     if (!this.state.country) {
-      return this.setState({
+      this.setState({
         errorField: {
           country: true,
         },
       });
     }
     if (!this.state.contact.name) {
-      return this.setState({
+      this.setState({
         errorField: {
           contactName: true,
         },
       });
     }
     if (!this.state.contact.position) {
-      return this.setState({
+      this.setState({
         errorField: {
           position: true,
         },
       });
     }
     if (!this.state.contact.phone) {
-      return this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           phone: true,
         },
-      });
+      }));
     }
     if (!this.state.contact.email) {
-      return this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           email: true,
         },
-      });
+      }));
     }
 
+    if (this.state.errorField.phone || this.state.errorField.email) {
+      return this.setState((prevState) => ({
+        errorField: {
+          ...prevState.errorField,
+        },
+      }));
+    }
     console.log("Submitted value =====>", this.state);
     axios
       .patch(`http://localhost:8000/warehouses/${this.state.id}`, this.state)
