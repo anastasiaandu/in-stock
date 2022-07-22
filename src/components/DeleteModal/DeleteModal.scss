@@ -15,29 +15,40 @@
   align-items: center;
   padding: 1.5rem 1rem;
   background-color: colors.$primaryLightColor;
-
+  background-attachment: fixed;
   @include mixins.tablet {
     padding: auto;
+    padding-top: 20%;
     background-color: rgba(19, 24, 44, 0.7);
   }
   &__question {
     margin-top: 1.5rem;
     width: 100%;
+    @include mixins.tablet {
+      margin-top: 0;
+    }
   }
   &__content {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: colors.$primaryLightColor;
     @include mixins.tablet {
-      background-color: colors.$primaryLightColor;
-      height: 50%;
+      height: 16.5rem;
+      width: 42rem;
+      padding: 1rem 4rem 2.5rem 4rem;
     }
   }
 
   &__close {
     display: flex;
     justify-content: flex-end;
+  }
+  &__close-icon {
+    position: relative;
+    right: -3rem;
   }
   &__actions {
     display: flex;
