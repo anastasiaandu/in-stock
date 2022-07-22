@@ -9,7 +9,6 @@ class WarehousePage extends Component {
 
   state = {
             warehouses: [],
-            selectedWarehouse: null,
             isError: false
           }
 
