@@ -69,7 +69,7 @@ const DetailsListItem = ({
           </div>
           <div className="details-item__section">
             <h4 className="details-item__subtitle--mobile">Warehouse</h4>
-            <p2>Manhattan</p2>
+            <p2>{location}</p2>
           </div>
         </>
       )}

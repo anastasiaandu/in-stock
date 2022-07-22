@@ -1,35 +1,47 @@
-import './DeleteModal.scss';
-import closeIcon from '../../assets/icons/close-24px.svg';
+import closeIcon from "../../assets/icons/close-24px.svg";
+import "./DeleteModal.scss";
 
-const DeleteModal = ({ title, id, onCancel, onConfirmDelete, isModal }) => {
+const DeleteModal = (props) => {
+  if (!props.show) {
+    return null;
+  }
 
-    const deleteEntry = () => {
-        onConfirmDelete(id);
-    }
+  const handleConfirmDeletion = () => {
+    props.onConfirmDelete(props.id);
+  };
+  return (
+    <div className="modal" onClick={props.onClose}>
+      <div
+        className="modal__content"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div>
+          <div className="modal__close">
+            <img src={closeIcon} alt="close icon" onClick={props.onClose} />
+          </div>
 
-    if (!isModal) {
-        return;
-    }
-
-    return (
-        <div className='delete' onClick={onCancel}>
-            <div className='delete__container' onClick={e => e.stopPropagation()}>
-                <div className='delete__confirmation'>
-                    <div className='delete__close'>
-                        <img src={closeIcon} alt='close icon' onClick={onCancel}/>
-                    </div>
-                    <h1 className="delete__title">Delete {title} Warehouse?</h1>
-                    <p className='delete__question'>
-                        Please confirm that you'd like to delete the {title} from the list of warehouses. You won't be able to undo this action.
-                    </p>
-                </div>
-                <div className='delete__actions'>
-                    <button className='delete__cancel' onClick={onCancel}>Cancel</button>
-                    <button className='delete__confirm' onClick={deleteEntry}>Delete</button>
-                </div>
-            </div>
+          <h1 className="modal__question">
+            Delete {props.title}{" "}
+            {props.itemType === "warehouse" ? "warehouse" : "inventory item"}?
+          </h1>
+          <p>
+            Please confirm that you'd like to delete {props.title} from{" "}
+            {props.itemType === "warehouse"
+              ? "the list of warehouses"
+              : "the inventory list"}
+            . You won't be able to undo this action.
+          </p>
         </div>
-    );
+        <div className="modal__actions">
+          <button className="modal__cancel" onClick={props.onClose}>
+            Cancel
+          </button>
+          <button className="modal__confirm" onClick={handleConfirmDeletion}>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
-
 export default DeleteModal;
