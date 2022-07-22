@@ -34,6 +34,44 @@
   padding: 0;
 }
 
+@mixin search {
+  border: 1px solid colors.$secondaryLightColor;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  text-indent: 1rem;
+  height: 2.25rem;
+
+  &::placeholder {
+    color: colors.$secondaryDarkColor;
+    font-family: 'Titillium Web';
+    font-size: 0.8125rem;
+  }
+
+  &:focus {
+      border: 1px solid colors.$primaryButtonColor;
+  }
+}
+
+@mixin add-button {
+  font-family: 'Titillium Web';
+  border: none;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  background-size: 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  height: 2.25rem;
+
+  &:hover {
+      background-color: colors.$primaryDarkColor;
+  }
+}
+
 //Text Styling
 @mixin mobile-page-header {
   font-size: 1.75rem;

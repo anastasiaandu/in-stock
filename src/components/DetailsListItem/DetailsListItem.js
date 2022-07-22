@@ -20,14 +20,14 @@ const DetailsListItem = ({
         <h4 className="details-item__subtitle--mobile">Status</h4>
         <div
           className={`details-item__highlight details-item__highlight--mobile ${
-            status === "In stock"
+            status === "In Stock"
               ? "details-item__highlight--green"
               : "details-item__highlight--red"
           }`}
         >
           <h4
             className={`details-item__stock ${
-              status === "In stock"
+              status === "In Stock"
                 ? "details-item__stock--green"
                 : "details-item__stock--red"
             }`}
@@ -42,14 +42,14 @@ const DetailsListItem = ({
         <p2 className="details-item__category--mobile">{category}</p2>
         <div
           className={`details-item__highlight details-item__highlight--tablet ${
-            status === "In stock"
+            status === "In Stock"
               ? "details-item__highlight--green"
               : "details-item__highlight--red"
           }`}
         >
           <h4
             className={`details-item__stock ${
-              status === "In stock"
+              status === "In Stock"
                 ? "details-item__stock--green"
                 : "details-item__stock--red"
             }`}
@@ -64,12 +64,12 @@ const DetailsListItem = ({
       </div>
       {location && (
         <>
-          <div className="details-item__section">
+          <div className="details-item__section details-item__section--spacing">
             {/*Empty section for mobile*/}
           </div>
           <div className="details-item__section">
             <h4 className="details-item__subtitle--mobile">Warehouse</h4>
-            <p2>Manhattan</p2>
+            <p2>{location}</p2>
           </div>
         </>
       )}

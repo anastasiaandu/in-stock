@@ -1,0 +1,143 @@
+@use '../../partials/global' as *;
+@use '../../partials/colors';
+@use '../../partials/mixins';
+
+
+.warehouse {
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid colors.$secondaryLightColor;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        @include mixins.desktop {
+            padding: 1.5rem 2.6875rem 1rem 2.6875rem;
+        }
+
+        &:hover {
+            background-color: colors.$backgroundLightColor;
+            cursor: pointer;
+        }
+    }
+
+    // &__item {
+    //     position: relative;
+    // }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 10rem;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            align-items: center;
+            width: 88%;
+        }
+    }
+
+    &__subtitle--mobile {
+        @include mixins.tablet {
+            display: none;
+        }
+    }
+
+    &__name {
+        margin-bottom: 1rem;
+        width: 8rem;
+        margin-right: 1rem;
+
+        @include mixins.tablet {
+            margin: 0;
+            flex-grow: 1;
+        }
+    }
+
+    &__address {
+        margin-bottom: 1rem;
+        width: 8rem;
+        margin-right: 1rem;
+
+        @include mixins.tablet {
+            margin: 0 1.5rem 0 0;
+            width: 6rem;
+            flex-grow: 1;
+        }
+    }
+
+    &__contact-name {
+        margin-bottom: 1rem;
+        width: 8rem;
+
+        @include mixins.tablet {
+            margin: 0;
+            flex-grow: 1;
+        }
+    }
+
+    &__contact-info {
+        margin-bottom: 1rem;
+        width: 8rem;
+
+        @include mixins.tablet {
+            margin: 0;
+            max-width: 9rem;
+            flex-grow: 1;
+        }
+    }
+
+    &__text-link {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__detail {
+        padding-top: 0.25rem;
+        margin-right: 0.25rem;
+        @include mixins.mobile-body-medium;
+
+        @include mixins.tablet {
+            @include mixins.tablet-desktop-body-medium;
+            margin: 0;
+        }
+
+        &--link {
+            color: colors.$primaryButtonColor;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+
+        @include mixins.tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__delete {
+        height: 1.5rem;
+        margin-right: 0.85rem;
+    }
+
+    &__edit {
+        height: 1.5rem;
+    }
+}
+
+
+

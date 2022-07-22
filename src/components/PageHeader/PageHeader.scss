@@ -13,12 +13,12 @@
     @include mixins.tablet {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        padding: 2rem 2rem 7rem 2rem; 
+        align-items: flex-end;
+        padding: 2rem 2rem 8rem 2rem; 
     }
 
     @include mixins.desktop {
-        padding: 2rem 8rem 7rem 8rem; 
+        padding: 2rem 8rem 8rem 8rem; 
     }
 
     &__logo {
@@ -27,12 +27,17 @@
 
         @include mixins.tablet {
             width: 8rem;
+            margin: 0;
         }
     }
 
     &__nav {
         width: 100%;
         margin-top: 0.75rem;
+
+        @include mixins.tablet {
+            margin: 0;
+        }
     }
 
     &__list {
@@ -75,7 +80,7 @@
         color: colors.$primaryLightColor;
         background-color: colors.$primaryDarkColor;
         padding: 0.5rem 2.5rem;
-        border-radius: 50px;
+        border-radius: 20px;
 
         @include mixins.tablet {
             padding: 0.625rem 1rem;
