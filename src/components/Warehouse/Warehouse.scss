@@ -17,12 +17,20 @@
             align-items: center;
             padding: 1rem 2rem;
         }
+        
+        @include mixins.desktop {
+            padding: 1.5rem 2.6875rem 1rem 2.6875rem;
+        }
 
         &:hover {
             background-color: colors.$backgroundLightColor;
             cursor: pointer;
         }
     }
+
+    // &__item {
+    //     position: relative;
+    // }
 
     &__info {
         display: flex;

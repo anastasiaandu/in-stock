@@ -14,9 +14,13 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            height: 5.5rem;
+            height: 6rem;
             padding: 1.5rem 2rem 1rem 2rem;
             border: none;
+        }
+
+        @include mixins.desktop {
+            padding: 1.5rem 2.6875rem 1rem 2.6875rem;
         }
     }
 
@@ -47,6 +51,8 @@
 
     &__add-button {
         @include mixins.add-button;
+        background-color: colors.$primaryButtonColor;
+        color: colors.$primaryLightColor;
 
         @include mixins.tablet {
             height: 2.375rem;
@@ -64,6 +70,10 @@
             justify-content: space-between;
             background-color: colors.$backgroundLightColor;
             padding: 0.75rem 2rem;
+        }
+
+        @include mixins.desktop {
+            padding: 0.75rem 2.6875rem;
         }
     }
 
