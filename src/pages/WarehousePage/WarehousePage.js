@@ -10,8 +10,40 @@ class WarehousePage extends Component {
   state = {
             warehouses: [],
             selectedWarehouse: null,
+            showModal: false,
             isError: false
           }
+
+  //function to handle warehouse delete 
+  handleDelete = () => {
+    this.setState({
+      showModal: true
+    })
+  }
+
+  //function to handle delete cancel
+  handleCancel = () => {
+    this.setState({
+      showModal: false
+    })
+  }
+
+  handleConfirmDelete = (id) => {
+    axios
+        .delete(`http://localhost:8080/warehouses/${id}`)
+        .then(() => {
+          this.setState({
+            showModal: false
+          })
+          this.updatePage();
+        })
+        .catch((error) => {
+          console.log("There was an error deleting the warehouse: ", error);
+          this.setState({
+            isError: true
+          })
+        })
+  }
 
   //function to update page
   updatePage = () => {
@@ -41,7 +73,13 @@ class WarehousePage extends Component {
     return (
       <main>
         {/* <WarehouseForm /> */}
-        <WarehousesList warehouses={this.state.warehouses}/>
+        <WarehousesList 
+          warehouses={this.state.warehouses} 
+          onDelete={this.handleDelete}
+          onCancel={this.handleCancel}  
+          onConfirmDelete={this.handleConfirmDelete}
+          isModal={this.state.showModal} 
+        />
       </main>
     );
   }

@@ -2,9 +2,9 @@ import './WarehousesList.scss';
 import WarehousesHeader from '../WarehousesHeader/WarehousesHeader';
 import Warehouse from '../Warehouse/Warehouse';
 
-const WarehousesList = ({ warehouses }) => {
+const WarehousesList = ({ warehouses, onDelete, onCancel, onConfirmDelete, isModal }) => {
     return (
-        <section className='warehouses'>
+        <section className={!isModal ? 'warehouses' : 'warehouses warehouses--modal'}>
             <WarehousesHeader/>
             <ul className='warehouses__all'>
                 {
@@ -12,6 +12,10 @@ const WarehousesList = ({ warehouses }) => {
                         return <Warehouse 
                                     key={warehouse.id}
                                     warehouse={warehouse}
+                                    onDelete={onDelete}
+                                    onCancel={onCancel}
+                                    onConfirmDelete={onConfirmDelete}
+                                    isModal={isModal}
             />
                     })
                 }

@@ -1,0 +1,92 @@
+@use '../../partials/global' as *;
+@use '../../partials/colors';
+@use '../../partials/mixins';
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: colors.$primaryLightColor;
+    padding: 1.5rem 1rem;
+
+    @include mixins.tablet {
+        top: 11.5625rem;
+        left: 3rem;
+        justify-content: center;
+        height: 16.375rem;
+        width: 42rem;
+        font-size: 0.875rem;
+        padding: 1.375rem 4rem 2.5rem 4rem;
+    }
+
+    @include mixins.desktop {
+        left: 19rem;
+    }
+
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+
+        @include mixins.tablet {
+            margin-right: -2.7rem;
+        }
+    }
+
+    &__title {
+        margin: 1rem 0;
+
+        @include mixins.tablet {
+            margin-top: 0;
+        }
+    }
+    
+    &__question {
+        font-size: 0.9375rem;
+
+        @include mixins.tablet {
+            width: 80%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+
+        @include mixins.tablet {
+            justify-content: flex-end;
+        }
+    }
+
+    &__cancel {
+        width: 50%;
+        @include mixins.add-button;
+        margin-right: 0.5rem;
+        border: 1px solid colors.$secondaryLightColor;
+        background-color: colors.$primaryLightColor;
+        color: colors.$secondaryDarkColor;
+
+        @include mixins.tablet {
+            height: 2.375rem;
+            width: 4.5rem;
+        }
+    }
+
+    &__confirm {
+        width: 50%;
+        @include mixins.add-button;
+        margin-left: 0.5rem;
+        background-color: colors.$errorColor;
+        color: colors.$primaryLightColor;
+
+        @include mixins.tablet {
+            height: 2.375rem;
+            width: 4.5rem;
+        }
+    }
+}
