@@ -1,12 +1,12 @@
 import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import PageHeader from './components/PageHeader/PageHeader';
-import PageFooter from './components/PageFooter/PageFooter';
+import PageHeader from "./components/PageHeader/PageHeader";
+import PageFooter from "./components/PageFooter/PageFooter";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <PageHeader />
@@ -23,6 +23,6 @@ function App() {
       <PageFooter />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
