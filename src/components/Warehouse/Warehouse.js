@@ -50,15 +50,13 @@ const Warehouse = ({ warehouse, onDelete, onCancel, onConfirmDelete, isModal }) 
                     />
                 </div>
             </div>
-            <div>
-                <DeleteModal 
-                    title={warehouse.name} 
-                    id={warehouse.id}
-                    onCancel={onCancel} 
-                    onConfirmDelete={onConfirmDelete}
-                    isModal={isModal} 
-                />
-            </div>
+            <DeleteModal 
+                title={warehouse.name} 
+                id={warehouse.id}
+                onCancel={onCancel} 
+                onConfirmDelete={onConfirmDelete}
+                isModal={isModal} 
+            />
         </section>
     );
 };

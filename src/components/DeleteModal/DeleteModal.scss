@@ -3,32 +3,35 @@
 @use '../../partials/mixins';
 
 .delete {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: colors.$primaryLightColor;
-    padding: 1.5rem 1rem;
 
-    @include mixins.tablet {
-        top: 11.5625rem;
-        left: 3rem;
-        justify-content: center;
-        height: 16.375rem;
-        width: 42rem;
-        font-size: 0.875rem;
-        padding: 1.375rem 4rem 2.5rem 4rem;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: colors.$primaryLightColor;
+        padding: 1.5rem 1rem;
+
+        @include mixins.tablet {
+            top: 11.5625rem;
+            left: 3rem;
+            justify-content: center;
+            height: 16.375rem;
+            width: 42rem;
+            font-size: 0.875rem;
+            padding: 1.375rem 4rem 2.5rem 4rem;
+        }
+    
+        @include mixins.desktop {
+            left: 19rem;
+        }
     }
-
-    @include mixins.desktop {
-        left: 19rem;
-    }
-
+    
     &__close {
         display: flex;
         justify-content: flex-end;

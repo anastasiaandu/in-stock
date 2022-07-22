@@ -15,7 +15,7 @@ const WarehousesList = ({ warehouses, onDelete, onCancel, onConfirmDelete, isMod
                                     onDelete={onDelete}
                                     onCancel={onCancel}
                                     onConfirmDelete={onConfirmDelete}
-                                    isModal={isModal}
+                                    isModal={isModal}                       
             />
                     })
                 }
