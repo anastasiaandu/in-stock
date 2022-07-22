@@ -34,7 +34,6 @@
     margin-bottom: 1.5rem;
   }
   &__input {
-    margin-bottom: 1rem;
     margin-top: 0.25rem;
     &:focus {
       border-top: colors.$primaryButtonColor;
@@ -71,4 +70,19 @@
       width: auto;
     }
   }
+  &__error-container {
+    margin: 0.25rem 0 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+  }
+  &__error-icon {
+    height: 1rem;
+  }
+  &__error-text {
+    color: colors.$errorColor;
+  }
+}
+#warehouse-form__error-border {
+  border: 1px solid colors.$errorColor;
 }
