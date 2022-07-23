@@ -27,6 +27,7 @@ class WarehouseForm extends Component {
       email: false,
     },
   };
+  
   handleSubmit = (e) => {
     e.preventDefault();
     if (!this.state.name) {
