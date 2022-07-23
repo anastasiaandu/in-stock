@@ -9,12 +9,13 @@ const DetailsListItem = ({
   category,
   quantity,
   location,
+  id
 }) => {
   return (
     <section className="details-item">
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Inventory Item</h4>
-        <TextLink inventoryItem={inventoryItem} />
+        <TextLink id={id} inventoryItem={inventoryItem} />
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Status</h4>

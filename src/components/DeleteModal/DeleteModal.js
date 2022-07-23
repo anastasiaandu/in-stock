@@ -3,6 +3,7 @@ import closeIcon from "../../assets/icons/close-24px.svg";
 import "./DeleteModal.scss";
 
 class DeleteModal extends Component {
+
   handleConfirmDeletion = () => {
     this.props.onConfirmDelete(this.props.id);
   };

@@ -1,11 +1,10 @@
-import './inventoryDetailsPage.scss';
+import './InventoryDetailsPage.scss';
+import InventoryDetails from '../../components/InventoryDetails/InventoryDetails';
 
-const inventoryDetailsPage = () => {
+const InventoryDetailsPage = (props) => {
     return (
-        <div>
-            
-        </div>
+        <InventoryDetails inventoryId={props.match.params.id}/>
     );
 };
 
-export default inventoryDetailsPage;
+export default InventoryDetailsPage;

@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import chevronRight from "../../assets/icons/chevron_right-24px.svg";
 import "./TextLink.scss";
-const TextLink = ({ inventoryItem }) => {
+
+const TextLink = ({ id, inventoryItem }) => {
   return (
-    <a className="text-link" href="/">
+    <Link className="text-link" to={`/inventory/${id}`}>
       {/* This needs to be changed to a 'Link' in order to redirect somewhere else*/}
       <h3>{inventoryItem}</h3>
       <img
@@ -10,7 +12,7 @@ const TextLink = ({ inventoryItem }) => {
         src={chevronRight}
         alt="chevron right"
       />
-    </a>
+    </Link>
   );
 };
 
