@@ -9,8 +9,13 @@ const DetailsListItem = ({
   category,
   quantity,
   location,
-  id
+  id,
+  onDelete
 }) => {
+  const handleOnDelete = () => {
+    onDelete(id, inventoryItem);
+  };
+
   return (
     <section className="details-item">
       <div className="details-item__section">
@@ -79,6 +84,7 @@ const DetailsListItem = ({
           className="details-item__action-button"
           src={deleteIcon}
           alt="delete icon"
+          onClick={handleOnDelete}
         />
         <img
           className="details-item__action-button"

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./WarehousePage.scss";
-// import WarehouseForm from "../../components/WarehouseForm/WarehouseForm";
 import WarehousesList from "../../components/WarehousesList/WarehousesList";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
@@ -30,6 +29,7 @@ class WarehousePage extends Component {
     });
   };
 
+  //function to handle delete confirm
   handleConfirmDelete = (id) => {
     axios
       .delete(`http://localhost:8080/warehouses/${id}`)
@@ -58,7 +58,7 @@ class WarehousePage extends Component {
       })
       .catch(() => {
         this.setState({
-          iisError: true,
+          isError: true
         });
       });
   };
@@ -83,7 +83,6 @@ class WarehousePage extends Component {
           itemType="warehouse"
         />
         <main>
-          {/* <WarehouseForm /> */}
           <WarehousesList
             warehouses={this.state.warehouses}
             onDelete={this.handleDelete}

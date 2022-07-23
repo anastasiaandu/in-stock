@@ -43,7 +43,7 @@ class DeleteModal extends Component {
                 : "inventory item"}
               ?
             </h1>
-            <p>
+            <p className="modal__verify">
               Please confirm that you'd like to delete {this.props.title} from{" "}
               {this.props.itemType === "warehouse"
                 ? "the list of warehouses"

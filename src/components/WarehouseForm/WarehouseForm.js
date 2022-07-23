@@ -3,18 +3,19 @@ import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import "./WarehouseForm.scss";
 import axios from "axios";
 import errorImg from "../../assets/icons/error-24px.svg";
+
 class WarehouseForm extends Component {
   state = {
-    id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    name: "Manhattan",
-    address: "503 Broadway",
-    city: "New York",
-    country: "USA",
+    id: "",
+    name: "",
+    address: "",
+    city: "",
+    country: "",
     contact: {
-      name: "Parmin Aujla",
-      position: "Warehouse Manager",
-      phone: "+1 (519) 729-8285",
-      email: "paujla@instock.com",
+      name: "",
+      position: "",
+      phone: "",
+      email: "",
     },
     errorField: {
       name: false,
@@ -119,6 +120,40 @@ class WarehouseForm extends Component {
     });
     e.target.removeAttribute(e.target.id);
   };
+
+
+  //Update page with pre-filled warehouse details
+  componentDidMount() {
+    axios
+    .get(`http://localhost:8080/warehouses`)
+    .then((response) => {
+      const selectedWarehouse = response.data.find((warehouse) => {
+        return warehouse.id === this.props.match.params.id
+      })
+
+      this.setState({
+        id: selectedWarehouse.id,
+        name: selectedWarehouse.name,
+        address: selectedWarehouse.address,
+        city: selectedWarehouse.city,
+        country: selectedWarehouse.country,
+        contact: {
+          name: selectedWarehouse.contact.name,
+          position: selectedWarehouse.contact.position,
+          phone: selectedWarehouse.contact.phone,
+          email: selectedWarehouse.contact.email
+        }
+      });
+
+    })
+    .catch(() => {
+      this.setState({
+        isError: true
+      });
+    });
+  }
+  
+
   render() {
     return (
       <article className="warehouse-form">
