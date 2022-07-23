@@ -20,6 +20,7 @@ class DeleteModal extends Component {
     if (!this.props.show) {
       return null;
     }
+    
     return (
       <div className="modal" onClick={this.props.onClose}>
         <div

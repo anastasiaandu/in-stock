@@ -13,7 +13,6 @@ class InventoryList extends React.Component {
     showModal: false
   };
 
-
   //function to handle inventory delete
   handleDelete = (selectedInventoryId, selectedInventoryName) => {
     this.setState({
@@ -44,7 +43,6 @@ class InventoryList extends React.Component {
         console.log("There was an error deleting the warehouse: ", error);
       });
   };
-
 
   //function to update page
   updatePage = () => {
