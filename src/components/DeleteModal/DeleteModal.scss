@@ -24,12 +24,18 @@
   }
 
   &__question {
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     width: 100%;
 
     @include mixins.tablet {
       margin-top: 0;
     }
+  }
+
+  &__verify {
+    @include mixins.tablet {
+        width: 85%;
+      }
   }
 
   &__content {
@@ -53,7 +59,11 @@
 
   &__close-icon {
     position: relative;
-    right: -3rem;
+
+    @include mixins.tablet {
+        right: -3rem;
+    }
+    
   }
 
   &__actions {

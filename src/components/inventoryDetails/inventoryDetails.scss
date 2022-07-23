@@ -17,7 +17,6 @@
         flex-direction: column;
         
         @include mixins.tablet {
-            // min-height: 18.25rem;
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;

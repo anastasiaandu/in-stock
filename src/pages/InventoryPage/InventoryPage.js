@@ -1,8 +1,9 @@
 import InventoryList from "../../components/InventoryList/InventoryList";
 
+
 const InventoryPage = (props) => {
   return (
-    <InventoryList/>
+        <InventoryList/>
   );
 };
 
