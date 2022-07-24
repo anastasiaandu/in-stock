@@ -324,8 +324,8 @@ class WarehouseForm extends Component {
               </div>
             </section>
             <section className="warehouse-form__input-panel">
+              <h2 className="warehouse-form__title">Contact Details</h2>
               <div className="warehouse-form__inputfield">
-                <h2 className="warehouse-form__title">Contact Details</h2>
                 <label htmlFor="contact-name" name="contact-name">
                   Contact Name
                 </label>

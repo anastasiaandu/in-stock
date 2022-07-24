@@ -2,7 +2,7 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import TextLink from "../TextLink/TextLink";
 import "./DetailsListItem.scss";
-
+import { Link } from "react-router-dom";
 const DetailsListItem = ({
   inventoryItem,
   status,
@@ -10,7 +10,7 @@ const DetailsListItem = ({
   quantity,
   location,
   id,
-  onDelete
+  onDelete,
 }) => {
   const handleOnDelete = () => {
     onDelete(id, inventoryItem);
@@ -86,11 +86,13 @@ const DetailsListItem = ({
           alt="delete icon"
           onClick={handleOnDelete}
         />
-        <img
-          className="details-item__action-button"
-          src={editIcon}
-          alt="edit icon"
-        />
+        <Link to={`/inventory/${id}/edit`}>
+          <img
+            className="details-item__action-button"
+            src={editIcon}
+            alt="edit icon"
+          />
+        </Link>
       </div>
     </section>
   );

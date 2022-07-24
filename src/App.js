@@ -7,6 +7,7 @@ import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsP
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 import WarehouseFormPage from "./pages/WarehouseFormPage/WarehouseFormPage";
+import InventoryFormPage from "./pages/InventoryFormPage/InventoryFormPage";
 const App = () => {
   return (
     <BrowserRouter>
@@ -30,6 +31,16 @@ const App = () => {
           />
 
           <Route path="/inventory" exact component={InventoryPage} />
+          <Route
+            path="/inventory/add"
+            exact
+            render={(params) => <InventoryFormPage status="add" {...params} />}
+          />
+          <Route
+            path="/inventory/:id/edit"
+            exact
+            render={(params) => <InventoryFormPage status="edit" {...params} />}
+          />
           <Route path="/inventory/:id" component={InventoryDetailsPage} />
         </Switch>
       </div>
