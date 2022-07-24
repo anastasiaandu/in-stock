@@ -107,7 +107,6 @@ class WarehouseForm extends Component {
     if (!ifFormValid) {
       return;
     }
-    console.log("Submitted value =====>", this.state);
     this.actionStatus === "edit" &&
       axios
         .patch(`http://localhost:8080/warehouses/${this.state.id}`, this.state)
@@ -159,15 +158,12 @@ class WarehouseForm extends Component {
   componentDidMount() {
     this.actionStatus = this.props.props.status;
     if (this.actionStatus === "edit") {
-      console.log(this.props.props);
       axios
         .get(`http://localhost:8080/warehouses`)
         .then((response) => {
-          console.log(this.props.props.match.params.id);
           const selectedWarehouse = response.data.find((warehouse) => {
             return warehouse.id === this.props.props.match.params.id;
           });
-          console.log(selectedWarehouse);
 
           this.setState({
             id: selectedWarehouse.id,
@@ -187,17 +183,14 @@ class WarehouseForm extends Component {
           this.setState({
             isError: true,
           });
-          console.log("error");
         });
     }
   }
 
   render() {
-    console.log(this.actionStatus);
     let titleHeading = "";
     this.actionStatus === "add" && (titleHeading = "Add New Warehouse");
     this.actionStatus === "edit" && (titleHeading = "Edit Warehouse");
-    console.log(titleHeading);
     return (
       <article className="warehouse-form">
         <NavigationHeader title={titleHeading} showEditButton={false} />
