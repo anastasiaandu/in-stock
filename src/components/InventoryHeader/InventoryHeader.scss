@@ -45,7 +45,7 @@
     @include mixins.add-button;
     background-color: colors.$primaryButtonColor;
     color: colors.$primaryLightColor;
-
+    
     @include mixins.tablet {
       height: 2.375rem;
       padding: 0 1rem;
