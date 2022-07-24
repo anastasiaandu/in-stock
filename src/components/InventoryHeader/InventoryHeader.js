@@ -1,6 +1,6 @@
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./InventoryHeader.scss";
-
+import { Link } from "react-router-dom";
 const InventoryHeader = ({ enableLocation }) => {
   return (
     <section>
@@ -14,7 +14,9 @@ const InventoryHeader = ({ enableLocation }) => {
             className="inventory__search"
             name="inventorySearch"
           />
-          <button className="inventory__add-button">+ Add New Item</button>
+          <Link to={`/inventory/add`}>
+            <button className="inventory__add-button">+ Add New Item</button>
+          </Link>
         </form>
       </div>
       <section className="inventory-sort-header">
