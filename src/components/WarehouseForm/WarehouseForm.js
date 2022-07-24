@@ -114,7 +114,7 @@ class WarehouseForm extends Component {
           console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          ifFormValid = false;
         });
 
     this.actionStatus === "add" &&
@@ -124,7 +124,7 @@ class WarehouseForm extends Component {
           console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          ifFormValid = false;
         });
 
     this.actionStatus === "add"

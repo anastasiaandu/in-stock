@@ -29,7 +29,6 @@ const App = () => {
             path="/warehouses/:id/edit"
             render={(params) => <WarehouseFormPage status="edit" {...params} />}
           />
-
           <Route path="/inventory" exact component={InventoryPage} />
           <Route
             path="/inventory/add"

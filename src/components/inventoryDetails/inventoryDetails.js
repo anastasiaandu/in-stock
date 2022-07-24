@@ -34,6 +34,7 @@ class InventoryDetails extends Component {
         });
       })
       .catch((error) => {
+        console.log("error", error);
         this.setState({
           isError: true,
         });
