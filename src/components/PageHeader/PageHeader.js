@@ -1,11 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./PageHeader.scss";
 import logoImage from "../../assets/logos/InStock-Logo.svg";
 
 const PageHeader = () => {
   return (
     <header className="header">
-      <img src={logoImage} alt="in-stock logo" className="header__logo" />
+      <Link to="/">
+        <img src={logoImage} alt="in-stock logo" className="header__logo" />
+      </Link>
       <nav className="header__nav">
         <ul className="header__list">
           <li>

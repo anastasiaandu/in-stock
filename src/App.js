@@ -36,12 +36,12 @@ const App = () => {
             exact
             render={(params) => <InventoryFormPage status="add" {...params} />}
           />
+
+          <Route path="/inventory/:id" exact component={InventoryDetailsPage} />
           <Route
             path="/inventory/:id/edit"
-            exact
             render={(params) => <InventoryFormPage status="edit" {...params} />}
           />
-          <Route path="/inventory/:id" component={InventoryDetailsPage} />
         </Switch>
       </div>
       <PageFooter />
