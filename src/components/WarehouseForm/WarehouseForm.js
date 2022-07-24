@@ -27,7 +27,7 @@ class WarehouseForm extends Component {
       email: false,
     },
   };
-  actionStatus = null;
+  actionStatus = "add";
   handleSubmit = (e) => {
     e.preventDefault();
     let ifFormValid = true;
@@ -108,7 +108,7 @@ class WarehouseForm extends Component {
       return;
     }
     console.log("Submitted value =====>", this.state);
-    this.actionStatus &&
+    this.actionStatus === "edit" &&
       axios
         .patch(`http://localhost:8080/warehouses/${this.state.id}`, this.state)
         .then((response) => {
@@ -117,8 +117,21 @@ class WarehouseForm extends Component {
         .catch((error) => {
           console.log(error);
         });
-    alert("Detail has been updated!");
-    this.props.history.push("/");
+
+    this.actionStatus === "add" &&
+      axios
+        .post(`http://localhost:8080/warehouses`, this.state)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+    this.actionStatus === "add"
+      ? alert("New Warehouse Details has been added!")
+      : alert("Warehouse Details has been updated!");
+    this.props.props.history.push("/");
   };
 
   handleChange = (contact) => (e) => {
@@ -134,15 +147,6 @@ class WarehouseForm extends Component {
         },
       }));
     }
-    !this.actionStatus &&
-      axios
-        .post(`http://localhost:8080/warehouses`, this.state)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
   };
   handleFocus = (value) => (e) => {
     this.setState({
@@ -153,20 +157,17 @@ class WarehouseForm extends Component {
 
   //Update page with pre-filled warehouse details
   componentDidMount() {
-    // if (this.props.match.path) {
-    //   var url = this.props.match.path;
-    //   this.actionStatus = url.includes("edit");
-    // }
-
-    console.log(this.state);
-    console.log(this.props);
-    this.actionStatus &&
+    this.actionStatus = this.props.props.status;
+    if (this.actionStatus === "edit") {
+      console.log(this.props.props);
       axios
         .get(`http://localhost:8080/warehouses`)
         .then((response) => {
+          console.log(this.props.props.match.params.id);
           const selectedWarehouse = response.data.find((warehouse) => {
-            return warehouse.id === this.props.match.params.id;
+            return warehouse.id === this.props.props.match.params.id;
           });
+          console.log(selectedWarehouse);
 
           this.setState({
             id: selectedWarehouse.id,
@@ -186,13 +187,20 @@ class WarehouseForm extends Component {
           this.setState({
             isError: true,
           });
+          console.log("error");
         });
+    }
   }
 
   render() {
+    console.log(this.actionStatus);
+    let titleHeading = "";
+    this.actionStatus === "add" && (titleHeading = "Add New Warehouse");
+    this.actionStatus === "edit" && (titleHeading = "Edit Warehouse");
+    console.log(titleHeading);
     return (
       <article className="warehouse-form">
-        <NavigationHeader title="Edit Warehouse" showEditButton={false} />
+        <NavigationHeader title={titleHeading} showEditButton={false} />
         <form className="warehouse-form__panel" onSubmit={this.handleSubmit}>
           <div className="warehouse-form__container">
             <section className="warehouse-form__input-panel">
@@ -451,14 +459,14 @@ class WarehouseForm extends Component {
               className="warehouse-form__cancel"
               name="cancel"
               value="Cancel"
-              onClick={() => this.props.history.push("/")}
+              onClick={() => this.props.props.history.push("/")}
             />
             <input
               type="submit"
               id="save"
               className="warehouse-form__submit"
               name="submit"
-              value="Save"
+              value={this.actionStatus === "add" ? "+ Add Warehouse" : "Save"}
             />
           </section>
         </form>

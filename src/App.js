@@ -6,7 +6,6 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
-import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 import WarehouseFormPage from "./pages/WarehouseFormPage/WarehouseFormPage";
 const App = () => {
   return (
@@ -16,12 +15,20 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={WarehousePage} />
           <Route
+            path="/warehouses/add"
+            exact
+            render={(params) => <WarehouseFormPage status="add" {...params} />}
+          />
+          <Route
             path="/warehouses/:id"
             exact
             component={WarehouseDetailsPage}
           />
-          <Route path="/warehouses/:id/edit" component={WarehouseForm} />
-          <Route path="/add" exact component={WarehouseFormPage} />
+          <Route
+            path="/warehouses/:id/edit"
+            render={(params) => <WarehouseFormPage status="edit" {...params} />}
+          />
+
           <Route path="/inventory" exact component={InventoryPage} />
           <Route path="/inventory/:id" component={InventoryDetailsPage} />
         </Switch>

@@ -14,7 +14,7 @@ const WarehousesHeader = () => {
             className="warehouses__search"
             name="warehousesSearch"
           />
-          <Link to={`/add`}>
+          <Link to={`/warehouses/add`}>
             <button className="warehouses__add-button">
               + Add New Warehouse
             </button>
