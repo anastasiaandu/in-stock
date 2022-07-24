@@ -16,7 +16,7 @@ class WarehouseDetails extends Component {
     name: null,
     isLoading: true,
   };
-  
+
   componentDidMount() {
     console.log("WarehouseDetails mounted");
     axios
@@ -43,7 +43,7 @@ class WarehouseDetails extends Component {
   }
   render() {
     return this.state.isLoading ? (
-      <h1 className="loading-state">Loading...</h1>
+      <h1 className="loading-state">Loading Details Page...</h1>
     ) : (
       <article className="warehouse-details">
         <NavigationHeader title={this.state.name} showEditButton={true} />
