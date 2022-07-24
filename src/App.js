@@ -3,11 +3,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import PageHeader from "./components/PageHeader/PageHeader";
 import PageFooter from "./components/PageFooter/PageFooter";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
-
+import WarehouseForm from "./components/WarehouseForm/WarehouseForm";
+import WarehouseFormPage from "./pages/WarehouseFormPage/WarehouseFormPage";
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,7 +21,7 @@ const App = () => {
             component={WarehouseDetailsPage}
           />
           <Route path="/warehouses/:id/edit" component={WarehouseForm} />
-          <Route path="/warehouses/add" component={WarehousePage} />
+          <Route path="/add" exact component={WarehouseFormPage} />
           <Route path="/inventory" exact component={InventoryPage} />
           <Route path="/inventory/:id" component={InventoryDetailsPage} />
         </Switch>

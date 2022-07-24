@@ -3,14 +3,13 @@ import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import "./WarehouseForm.scss";
 import axios from "axios";
 import errorImg from "../../assets/icons/error-24px.svg";
-
 class WarehouseForm extends Component {
   state = {
-    id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    name: "MAnhattan",
-    address: "503 Broadway",
-    city: "New York",
-    country: "USA",
+    id: "",
+    name: "",
+    address: "",
+    city: "",
+    country: "",
     contact: {
       name: "",
       position: "",
@@ -28,57 +27,63 @@ class WarehouseForm extends Component {
       email: false,
     },
   };
-
+  actionStatus = null;
   handleSubmit = (e) => {
     e.preventDefault();
     let ifFormValid = true;
     if (!this.state.name) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           name: true,
         },
-      });
+      }));
     }
     if (!this.state.address) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           address: true,
         },
-      });
+      }));
     }
     if (!this.state.city) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           city: true,
         },
-      });
+      }));
     }
     if (!this.state.country) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           country: true,
         },
-      });
+      }));
     }
     if (!this.state.contact.name) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           contactName: true,
         },
-      });
+      }));
     }
     if (!this.state.contact.position) {
       ifFormValid = false;
-      this.setState({
+      this.setState((prevState) => ({
         errorField: {
+          ...prevState.errorField,
           position: true,
         },
-      });
+      }));
     }
     if (!this.state.contact.phone) {
       ifFormValid = false;
@@ -103,14 +108,15 @@ class WarehouseForm extends Component {
       return;
     }
     console.log("Submitted value =====>", this.state);
-    axios
-      .patch(`http://localhost:8000/warehouses/${this.state.id}`, this.state)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.actionStatus &&
+      axios
+        .patch(`http://localhost:8080/warehouses/${this.state.id}`, this.state)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     alert("Detail has been updated!");
     this.props.history.push("/");
   };
@@ -128,6 +134,15 @@ class WarehouseForm extends Component {
         },
       }));
     }
+    !this.actionStatus &&
+      axios
+        .post(`http://localhost:8080/warehouses`, this.state)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   };
   handleFocus = (value) => (e) => {
     this.setState({
@@ -138,32 +153,40 @@ class WarehouseForm extends Component {
 
   //Update page with pre-filled warehouse details
   componentDidMount() {
-    axios
-      .get(`http://localhost:8080/warehouses`)
-      .then((response) => {
-        const selectedWarehouse = response.data.find((warehouse) => {
-          return warehouse.id === this.props.match.params.id;
-        });
+    // if (this.props.match.path) {
+    //   var url = this.props.match.path;
+    //   this.actionStatus = url.includes("edit");
+    // }
 
-        this.setState({
-          id: selectedWarehouse.id,
-          name: selectedWarehouse.name,
-          address: selectedWarehouse.address,
-          city: selectedWarehouse.city,
-          country: selectedWarehouse.country,
-          contact: {
-            name: selectedWarehouse.contact.name,
-            position: selectedWarehouse.contact.position,
-            phone: selectedWarehouse.contact.phone,
-            email: selectedWarehouse.contact.email,
-          },
+    console.log(this.state);
+    console.log(this.props);
+    this.actionStatus &&
+      axios
+        .get(`http://localhost:8080/warehouses`)
+        .then((response) => {
+          const selectedWarehouse = response.data.find((warehouse) => {
+            return warehouse.id === this.props.match.params.id;
+          });
+
+          this.setState({
+            id: selectedWarehouse.id,
+            name: selectedWarehouse.name,
+            address: selectedWarehouse.address,
+            city: selectedWarehouse.city,
+            country: selectedWarehouse.country,
+            contact: {
+              name: selectedWarehouse.contact.name,
+              position: selectedWarehouse.contact.position,
+              phone: selectedWarehouse.contact.phone,
+              email: selectedWarehouse.contact.email,
+            },
+          });
+        })
+        .catch(() => {
+          this.setState({
+            isError: true,
+          });
         });
-      })
-      .catch(() => {
-        this.setState({
-          isError: true,
-        });
-      });
   }
 
   render() {

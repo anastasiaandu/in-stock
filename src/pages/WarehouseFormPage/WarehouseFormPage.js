@@ -1,8 +1,8 @@
 import React from "react";
 import WarehouseForm from "../../components/WarehouseForm/WarehouseForm";
 
-const EditWarehousePage = () => {
+const WarehouseFormPage = () => {
   return <WarehouseForm />;
 };
 
-export default EditWarehousePage;
+export default WarehouseFormPage;
