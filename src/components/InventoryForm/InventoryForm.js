@@ -10,7 +10,7 @@ class InventoryForm extends Component {
     itemName: "",
     description: "",
     category: "",
-    status: "",
+    status: "In Stock",
     quantity: "",
     errorField: {
       warehouseName: false,
@@ -146,6 +146,7 @@ class InventoryForm extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+
     console.log(e.target.name, e.target.value);
   };
   handleFocus = (value) => (e) => {
@@ -240,6 +241,10 @@ class InventoryForm extends Component {
                 <select
                   className="inventory-form__input"
                   name="category"
+                  id={`${
+                    this.state.errorField.category &&
+                    "inventory-form__error-border"
+                  }`}
                   value={this.state.category}
                   onChange={this.handleChange}
                   defaultValue={"default"}
@@ -256,6 +261,18 @@ class InventoryForm extends Component {
                   <option value="accessories">Accessories</option>
                   <option value="health">Health</option>
                 </select>
+                {this.state.errorField.category && (
+                  <div className="inventory-form__error-container">
+                    <img
+                      src={errorImg}
+                      alt="Error Asteric"
+                      className="inventory-form__error-icon"
+                    />
+                    <p3 className="inventory-form__error-text">
+                      This field is required
+                    </p3>
+                  </div>
+                )}
               </div>
             </section>
             <section className="inventory-form__input-panel">
@@ -327,6 +344,10 @@ class InventoryForm extends Component {
                   Warehouse
                 </label>
                 <select
+                  id={`${
+                    this.state.errorField.warehouseName &&
+                    "inventory-form__error-border"
+                  }`}
                   className="inventory-form__input"
                   name="warehouseName"
                   value={this.state.warehouseName}
@@ -337,7 +358,25 @@ class InventoryForm extends Component {
                     Please Select
                   </option>
                   <option value="Manhattan">Manhattan</option>
+                  <option value="Washington">Washington</option>
+                  <option value="Jersey">Jersey</option>
+                  <option value="San Fran">San Fran</option>
+                  <option value="Santa Monica">Santa Monica</option>
+                  <option value="Seattle">Seattle</option>
+                  <option value="Miami">Miami</option>
                 </select>
+                {this.state.errorField.warehouseName && (
+                  <div className="inventory-form__error-container">
+                    <img
+                      src={errorImg}
+                      alt="Error Asteric"
+                      className="inventory-form__error-icon"
+                    />
+                    <p3 className="inventory-form__error-text">
+                      This field is required
+                    </p3>
+                  </div>
+                )}
               </div>
             </section>
           </div>
