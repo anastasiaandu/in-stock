@@ -42,7 +42,7 @@
   &__input {
     margin-top: 0.25rem;
     &:focus {
-      border-top: colors.$primaryButtonColor;
+      border-top: 1px solid colors.$primaryButtonColor;
     }
     @include mixins.tablet {
       &:last-child {
