@@ -3,6 +3,7 @@ import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import "./WarehouseForm.scss";
 import axios from "axios";
 import errorImg from "../../assets/icons/error-24px.svg";
+
 class WarehouseForm extends Component {
   state = {
     id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
@@ -11,8 +12,8 @@ class WarehouseForm extends Component {
     city: "New York",
     country: "USA",
     contact: {
-      name: "Parmin Aujla",
-      position: "Warehouse Manager",
+      name: "",
+      position: "",
       phone: "",
       email: "",
     },
@@ -29,7 +30,9 @@ class WarehouseForm extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    let ifFormValid = true;
     if (!this.state.name) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           name: true,
@@ -37,6 +40,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.address) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           address: true,
@@ -44,6 +48,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.city) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           city: true,
@@ -51,6 +56,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.country) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           country: true,
@@ -58,6 +64,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.contact.name) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           contactName: true,
@@ -65,6 +72,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.contact.position) {
+      ifFormValid = false;
       this.setState({
         errorField: {
           position: true,
@@ -72,6 +80,7 @@ class WarehouseForm extends Component {
       });
     }
     if (!this.state.contact.phone) {
+      ifFormValid = false;
       this.setState((prevState) => ({
         errorField: {
           ...prevState.errorField,
@@ -80,6 +89,7 @@ class WarehouseForm extends Component {
       }));
     }
     if (!this.state.contact.email) {
+      ifFormValid = false;
       this.setState((prevState) => ({
         errorField: {
           ...prevState.errorField,
@@ -88,12 +98,8 @@ class WarehouseForm extends Component {
       }));
     }
 
-    if (this.state.errorField.phone || this.state.errorField.email) {
-      return this.setState((prevState) => ({
-        errorField: {
-          ...prevState.errorField,
-        },
-      }));
+    if (!ifFormValid) {
+      return;
     }
     console.log("Submitted value =====>", this.state);
     axios
