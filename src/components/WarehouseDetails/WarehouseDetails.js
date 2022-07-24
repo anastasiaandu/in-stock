@@ -16,6 +16,7 @@ class WarehouseDetails extends Component {
     name: null,
     isLoading: true,
   };
+  
   componentDidMount() {
     console.log("WarehouseDetails mounted");
     axios

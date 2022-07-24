@@ -47,7 +47,13 @@ const Warehouse = ({ warehouse, onDelete }) => {
             alt="delete icon"
             onClick={handleOnDelete}
           />
-          <img className="warehouse__edit" src={editIcon} alt="edit icon" />
+          <Link to={`/warehouses/${warehouse.id}/edit`}>
+            <img 
+              className="warehouse__edit" 
+              src={editIcon} 
+              alt="edit icon" 
+            />
+          </Link>
         </div>
       </div>
     </section>

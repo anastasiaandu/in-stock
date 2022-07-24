@@ -3,6 +3,7 @@ import closeIcon from "../../assets/icons/close-24px.svg";
 import "./DeleteModal.scss";
 
 class DeleteModal extends Component {
+
   handleConfirmDeletion = () => {
     this.props.onConfirmDelete(this.props.id);
   };
@@ -19,6 +20,7 @@ class DeleteModal extends Component {
     if (!this.props.show) {
       return null;
     }
+    
     return (
       <div className="modal" onClick={this.props.onClose}>
         <div
@@ -42,7 +44,7 @@ class DeleteModal extends Component {
                 : "inventory item"}
               ?
             </h1>
-            <p>
+            <p className="modal__verify">
               Please confirm that you'd like to delete {this.props.title} from{" "}
               {this.props.itemType === "warehouse"
                 ? "the list of warehouses"

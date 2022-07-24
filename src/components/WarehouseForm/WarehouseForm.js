@@ -28,6 +28,7 @@ class WarehouseForm extends Component {
       email: false,
     },
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     let ifFormValid = true;
@@ -111,6 +112,7 @@ class WarehouseForm extends Component {
         console.log(error);
       });
     alert("Detail has been updated!");
+    this.props.history.push("/");
   };
 
   handleChange = (contact) => (e) => {
@@ -133,6 +135,37 @@ class WarehouseForm extends Component {
     });
     e.target.removeAttribute(e.target.id);
   };
+
+  //Update page with pre-filled warehouse details
+  componentDidMount() {
+    axios
+      .get(`http://localhost:8080/warehouses`)
+      .then((response) => {
+        const selectedWarehouse = response.data.find((warehouse) => {
+          return warehouse.id === this.props.match.params.id;
+        });
+
+        this.setState({
+          id: selectedWarehouse.id,
+          name: selectedWarehouse.name,
+          address: selectedWarehouse.address,
+          city: selectedWarehouse.city,
+          country: selectedWarehouse.country,
+          contact: {
+            name: selectedWarehouse.contact.name,
+            position: selectedWarehouse.contact.position,
+            phone: selectedWarehouse.contact.phone,
+            email: selectedWarehouse.contact.email,
+          },
+        });
+      })
+      .catch(() => {
+        this.setState({
+          isError: true,
+        });
+      });
+  }
+
   render() {
     return (
       <article className="warehouse-form">
