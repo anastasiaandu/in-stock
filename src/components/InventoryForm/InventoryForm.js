@@ -25,7 +25,6 @@ class InventoryForm extends Component {
   //Update page with pre-filled Inventory details
   componentDidMount() {
     this.actionStatus = this.props.props.status;
-    console.log(this.actionStatus);
     if (this.actionStatus === "edit") {
       axios
         .get(`http://localhost:8080/inventories`)
@@ -54,10 +53,7 @@ class InventoryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit clicked");
-
     let ifFormValid = true;
-
     if (!this.state.warehouseName) {
       ifFormValid = false;
       this.setState((prevState) => ({
@@ -116,8 +112,6 @@ class InventoryForm extends Component {
       return;
     }
 
-    console.log(this.state);
-
     this.actionStatus === "edit" &&
       axios
         .patch(`http://localhost:8080/inventories/${this.state.id}`, this.state)
@@ -125,7 +119,7 @@ class InventoryForm extends Component {
           console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          ifFormValid = false;
         });
     this.actionStatus === "add" &&
       axios
@@ -134,7 +128,7 @@ class InventoryForm extends Component {
           console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          ifFormValid = false;
         });
 
     this.actionStatus === "add"
@@ -146,8 +140,6 @@ class InventoryForm extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-
-    console.log(e.target.name, e.target.value);
   };
   handleFocus = (value) => (e) => {
     this.setState({
