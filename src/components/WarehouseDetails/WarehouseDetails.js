@@ -18,11 +18,9 @@ class WarehouseDetails extends Component {
   };
 
   componentDidMount() {
-    console.log("WarehouseDetails mounted");
     axios
       .get(`http://localhost:8080/warehouses/${this.props.warehouseId}`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           address: response.data.address,
           city: response.data.city,

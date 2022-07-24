@@ -110,9 +110,7 @@ class WarehouseForm extends Component {
     this.actionStatus === "edit" &&
       axios
         .patch(`http://localhost:8080/warehouses/${this.state.id}`, this.state)
-        .then((response) => {
-          console.log(response);
-        })
+        .then()
         .catch((error) => {
           ifFormValid = false;
         });
@@ -120,9 +118,6 @@ class WarehouseForm extends Component {
     this.actionStatus === "add" &&
       axios
         .post(`http://localhost:8080/warehouses`, this.state)
-        .then((response) => {
-          console.log(response);
-        })
         .catch((error) => {
           ifFormValid = false;
         });
