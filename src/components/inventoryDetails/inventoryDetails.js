@@ -48,7 +48,12 @@ class InventoryDetails extends Component {
 
     return (
       <article className="inventory">
-        <NavigationHeader title={this.state.itemName} showEditButton={true} />
+        <NavigationHeader
+          title={this.state.itemName}
+          showEditButton={true}
+          selectedId={this.state.id}
+          type="inventory"
+        />
         <div className="inventory__container">
           <div className="inventory__titles">
             <div className="inventory__description-heading">

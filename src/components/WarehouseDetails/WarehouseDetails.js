@@ -46,7 +46,12 @@ class WarehouseDetails extends Component {
       <h1 className="loading-state">Loading Details Page...</h1>
     ) : (
       <article className="warehouse-details">
-        <NavigationHeader title={this.state.name} showEditButton={true} />
+        <NavigationHeader
+          title={this.state.name}
+          showEditButton={true}
+          selectedId={this.state.id}
+          type="warehouse"
+        />
         <section className="warehouse-info">
           <div className="warehouse-info__address">
             <h4>Warehouse address:</h4>
