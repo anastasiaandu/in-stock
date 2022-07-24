@@ -242,11 +242,14 @@ class InventoryForm extends Component {
                   name="category"
                   value={this.state.category}
                   onChange={this.handleChange}
-                  defaultValue={{ label: "Choose one", value: "" }}
+                  defaultValue={"default"}
                   placeholder={
                     this.state.category ? this.state.category : "Please Select"
                   }
                 >
+                  <option disabled={true} value="">
+                    Please Select
+                  </option>
                   <option value="electronics">Electronics</option>
                   <option value="gear">Gear</option>
                   <option value="apparel">Apparel</option>
@@ -284,38 +287,41 @@ class InventoryForm extends Component {
                   </label>
                 </div>
               </div>
-              <div className="inventory-form__inputfield">
-                <label htmlFor="quantity" name="quantity">
-                  Quantity
-                </label>
-                <input
-                  onFocus={this.handleFocus("quantity")}
-                  className="inventory-form__input"
-                  id={`${
-                    this.state.errorField.quantity &&
-                    "inventory-form__error-border"
-                  }`}
-                  type="text"
-                  onChange={this.handleChange}
-                  value={this.state.quantity}
-                  name="quantity"
-                  placeholder={
-                    this.state.quantity ? this.state.quantity : "Quantity"
-                  }
-                ></input>
-                {this.state.errorField.quantity && (
-                  <div className="inventory-form__error-container">
-                    <img
-                      src={errorImg}
-                      alt="Error Asteric"
-                      className="inventory-form__error-icon"
-                    />
-                    <p3 className="inventory-form__error-text">
-                      This field is required
-                    </p3>
-                  </div>
-                )}
-              </div>
+              {this.state.status === "In Stock" && (
+                <div className="inventory-form__inputfield">
+                  <label htmlFor="quantity" name="quantity">
+                    Quantity
+                  </label>
+                  <input
+                    onFocus={this.handleFocus("quantity")}
+                    className="inventory-form__input"
+                    id={`${
+                      this.state.errorField.quantity &&
+                      "inventory-form__error-border"
+                    }`}
+                    type="text"
+                    onChange={this.handleChange}
+                    value={this.state.quantity}
+                    name="quantity"
+                    placeholder={
+                      this.state.quantity ? this.state.quantity : "0"
+                    }
+                  ></input>
+                  {this.state.errorField.quantity && (
+                    <div className="inventory-form__error-container">
+                      <img
+                        src={errorImg}
+                        alt="Error Asteric"
+                        className="inventory-form__error-icon"
+                      />
+                      <p3 className="inventory-form__error-text">
+                        This field is required
+                      </p3>
+                    </div>
+                  )}
+                </div>
+              )}
+
               <div className="inventory-form__inputfield">
                 <label htmlFor="warehouse" name="warehouseName">
                   Warehouse
@@ -327,7 +333,7 @@ class InventoryForm extends Component {
                   onChange={this.handleChange}
                   defaultValue={"default"}
                 >
-                  <option value={"default"} disabled>
+                  <option disabled={true} value="">
                     Please Select
                   </option>
                   <option value="Manhattan">Manhattan</option>
