@@ -8,10 +8,16 @@
   &__container {
     display: flex;
     flex-direction: column;
+
     @include mixins.tablet {
       flex-direction: row;
       margin: 1.5rem 0;
     }
+  }
+  &__inputfield {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
   }
   &__input-panel {
     display: flex;
@@ -71,7 +77,7 @@
     }
   }
   &__error-container {
-    margin: 0.25rem 0 1rem;
+    margin: 0.25rem 0 0;
     display: flex;
     align-items: center;
     column-gap: 0.25rem;
