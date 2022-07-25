@@ -5,7 +5,6 @@
 .inventory {
   min-height: 22.825rem;
   margin-bottom: 4.5rem;
-
   @include mixins.tablet {
     min-height: 12.25rem;
     margin-bottom: 25.5rem;
@@ -14,7 +13,6 @@
   &__container {
     display: flex;
     flex-direction: column;
-
     @include mixins.tablet {
       flex-direction: row;
       justify-content: space-between;
@@ -27,7 +25,6 @@
     display: flex;
     flex-direction: column;
     padding: 1rem 1.5rem 0 1.5rem;
-
     @include mixins.tablet {
       width: 50%;
       padding: 0 2.5rem 0 0;
@@ -46,7 +43,6 @@
     flex-wrap: wrap;
     padding: 0 1.5rem;
     max-height: 10rem;
-
     @include mixins.tablet {
       width: 50%;
       padding: 0 0 0 2.5rem;
@@ -58,7 +54,6 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
     @include mixins.mobile-body-medium;
-
     @include mixins.tablet {
       @include mixins.tablet-desktop-body-medium;
       margin-bottom: 2rem;
@@ -75,7 +70,6 @@
     padding: 0.25rem 0.5rem;
     margin-bottom: 1rem;
     border-radius: 0.75rem;
-
     @include mixins.tablet {
       margin-bottom: 2rem;
     }
@@ -83,7 +77,6 @@
     &--green {
       background: rgba(21, 132, 99, 0.07);
       width: 3.8125rem;
-
       @include mixins.tablet {
         width: 4.0625rem;
       }
@@ -92,7 +85,6 @@
     &--red {
       background: rgba(201, 69, 21, 0.07);
       width: 5.375rem;
-
       @include mixins.tablet {
         width: 5.75rem;
       }
@@ -101,11 +93,9 @@
 
   &__stock {
     text-transform: uppercase;
-
     &--green {
       color: colors.$successColor;
     }
-
     &--red {
       color: colors.$errorColor;
     }

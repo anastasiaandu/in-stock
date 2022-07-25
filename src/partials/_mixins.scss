@@ -47,17 +47,17 @@
 
   &::placeholder {
     color: colors.$secondaryDarkColor;
-    font-family: 'Titillium Web';
+    font-family: "Titillium Web";
     font-size: 0.8125rem;
   }
 
   &:focus {
-      border: 1px solid colors.$primaryButtonColor;
+    border: 1px solid colors.$primaryButtonColor;
   }
 }
 
 @mixin add-button {
-  font-family: 'Titillium Web';
+  font-family: "Titillium Web";
   border: none;
   border-radius: 20px;
   background-repeat: no-repeat;
@@ -66,9 +66,15 @@
   font-size: 0.8125rem;
   font-weight: 600;
   height: 2.25rem;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
-      background-color: colors.$primaryDarkColor;
+    background-color: colors.$primaryDarkColor;
+  }
+  @include tablet {
+    width: auto;
   }
 }
 

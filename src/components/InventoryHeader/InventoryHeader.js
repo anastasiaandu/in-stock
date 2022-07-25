@@ -14,8 +14,9 @@ const InventoryHeader = ({ enableLocation }) => {
             className="inventory__search"
             name="inventorySearch"
           />
-          <Link to={`/inventory/add`}>
-            <button className="inventory__add-button">+ Add New Item</button>
+
+          <Link to={`/inventory/add`} className="inventory__add-button">
+            + Add New Item
           </Link>
         </form>
       </div>

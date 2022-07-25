@@ -18,11 +18,9 @@ class WarehouseDetails extends Component {
   };
 
   componentDidMount() {
-    console.log("WarehouseDetails mounted");
     axios
       .get(`http://localhost:8080/warehouses/${this.props.warehouseId}`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           address: response.data.address,
           city: response.data.city,
@@ -46,7 +44,12 @@ class WarehouseDetails extends Component {
       <h1 className="loading-state">Loading Details Page...</h1>
     ) : (
       <article className="warehouse-details">
-        <NavigationHeader title={this.state.name} showEditButton={true} />
+        <NavigationHeader
+          title={this.state.name}
+          showEditButton={true}
+          selectedId={this.state.id}
+          type="warehouse"
+        />
         <section className="warehouse-info">
           <div className="warehouse-info__address">
             <h4>Warehouse address:</h4>

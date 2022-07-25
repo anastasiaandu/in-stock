@@ -17,11 +17,9 @@ class InventoryDetails extends Component {
   };
 
   componentDidMount() {
-    console.log("Inventory ID", this.props.inventoryId);
     axios
       .get(`http://localhost:8080/inventories/${this.props.inventoryId}`)
       .then((response) => {
-        console.log(response);
         this.setState({
           id: response.data.id,
           warehouseName: response.data.warehouseName,
@@ -34,7 +32,7 @@ class InventoryDetails extends Component {
         });
       })
       .catch((error) => {
-        console.log("error", error);
+        console.log("There was an error retreiving the inventory data:", error);
         this.setState({
           isError: true,
         });
@@ -49,7 +47,12 @@ class InventoryDetails extends Component {
 
     return (
       <article className="inventory">
-        <NavigationHeader title={this.state.itemName} showEditButton={true} />
+        <NavigationHeader
+          title={this.state.itemName}
+          showEditButton={true}
+          selectedId={this.state.id}
+          type="inventory"
+        />
         <div className="inventory__container">
           <div className="inventory__titles">
             <div className="inventory__description-heading">

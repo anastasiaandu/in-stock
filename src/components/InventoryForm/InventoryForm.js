@@ -115,18 +115,13 @@ class InventoryForm extends Component {
     this.actionStatus === "edit" &&
       axios
         .patch(`http://localhost:8080/inventories/${this.state.id}`, this.state)
-        .then((response) => {
-          console.log(response);
-        })
+        .then(() => {})
         .catch((error) => {
           ifFormValid = false;
         });
     this.actionStatus === "add" &&
       axios
         .post(`http://localhost:8080/inventories`, this.state)
-        .then((response) => {
-          console.log(response);
-        })
         .catch((error) => {
           ifFormValid = false;
         });
