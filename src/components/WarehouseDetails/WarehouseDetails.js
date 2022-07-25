@@ -53,20 +53,20 @@ class WarehouseDetails extends Component {
         <section className="warehouse-info">
           <div className="warehouse-info__address">
             <h4>Warehouse address:</h4>
-            <p2>{this.state.address}</p2>
-            <p2>
+            <p>{this.state.address}</p>
+            <p>
               {this.state.city}, {this.state.country}
-            </p2>
+            </p>
           </div>
           <div className="warehouse-info__contact-name">
             <h4>Contact name:</h4>
-            <p2>{this.state.contact.name}</p2>
-            <p2>{this.state.contact.position}</p2>
+            <p>{this.state.contact.name}</p>
+            <p>{this.state.contact.position}</p>
           </div>
           <div className="warehouse-info__contact-info">
             <h4>Contact information:</h4>
-            <p2>{this.state.contact.phone}</p2>
-            <p2>{this.state.contact.email}</p2>
+            <p>{this.state.contact.phone}</p>
+            <p>{this.state.contact.email}</p>
           </div>
         </section>
         <section className="warehouse-sort-header">

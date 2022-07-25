@@ -44,6 +44,8 @@
     }
   }
   &__contact-name {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     @include mixins.tablet {
       margin-right: 2.5rem;

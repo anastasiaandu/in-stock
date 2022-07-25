@@ -30,7 +30,7 @@ const NavigationHeader = ({ title, showEditButton, selectedId, type }) => {
               src={editIcon}
               alt="Edit button"
             />
-            <p2 className="navigation-header__edit-button--text">Edit</p2>
+            <p className="navigation-header__edit-button--text">Edit</p>
           </button>
         </Link>
       )}
