@@ -87,6 +87,10 @@
   }
   &__error-text {
     color: colors.$errorColor;
+    @include mixins.mobile-body-small;
+    @include mixins.tablet {
+      @include mixins.tablet-desktop-body-small;
+    }
   }
 }
 #warehouse-form__error-border {

@@ -41,11 +41,11 @@ const DetailsListItem = ({
             {status}
           </h4>
         </div>
-        <p2 className="details-item__category--tablet">{category}</p2>
+        <p className="details-item__category--tablet">{category}</p>
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Category</h4>
-        <p2 className="details-item__category--mobile">{category}</p2>
+        <p className="details-item__category--mobile">{category}</p>
         <div
           className={`details-item__highlight details-item__highlight--tablet ${
             status === "In Stock"
@@ -66,7 +66,7 @@ const DetailsListItem = ({
       </div>
       <div className="details-item__section">
         <h4 className="details-item__subtitle--mobile">Qty</h4>
-        <p2>{quantity}</p2>
+        <p>{quantity}</p>
       </div>
       {location && (
         <>
@@ -75,7 +75,7 @@ const DetailsListItem = ({
           </div>
           <div className="details-item__section">
             <h4 className="details-item__subtitle--mobile">Warehouse</h4>
-            <p2>{location}</p2>
+            <p>{location}</p>
           </div>
         </>
       )}

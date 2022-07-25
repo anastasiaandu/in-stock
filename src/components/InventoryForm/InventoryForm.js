@@ -180,9 +180,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -215,9 +215,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -234,7 +234,6 @@ class InventoryForm extends Component {
                   }`}
                   value={this.state.category}
                   onChange={this.handleChange}
-                  defaultValue={"default"}
                   placeholder={
                     this.state.category ? this.state.category : "Please Select"
                   }
@@ -255,9 +254,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -318,9 +317,9 @@ class InventoryForm extends Component {
                         alt="Error Asteric"
                         className="inventory-form__error-icon"
                       />
-                      <p3 className="inventory-form__error-text">
+                      <p className="inventory-form__error-text">
                         This field is required
-                      </p3>
+                      </p>
                     </div>
                   )}
                 </div>
@@ -339,7 +338,6 @@ class InventoryForm extends Component {
                   name="warehouseName"
                   value={this.state.warehouseName}
                   onChange={this.handleChange}
-                  defaultValue={"default"}
                 >
                   <option disabled={true} value="">
                     Please Select
@@ -359,9 +357,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>

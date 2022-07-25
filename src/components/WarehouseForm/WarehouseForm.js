@@ -218,9 +218,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -250,9 +250,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -279,9 +279,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -311,9 +311,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -348,9 +348,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -382,9 +382,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -416,9 +416,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -450,9 +450,9 @@ class WarehouseForm extends Component {
                       alt="Error Asteric"
                       className="warehouse-form__error-icon"
                     />
-                    <p3 className="warehouse-form__error-text">
+                    <p className="warehouse-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>

@@ -45,26 +45,20 @@ h4 {
 }
 
 //Body Copy
+// p {
+//   @include mixins.mobile-body-large;
+//   @include mixins.tablet {
+//     @include mixins.tablet-desktop-body-large;
+//   }
+// }
 p {
-  @include mixins.mobile-body-large;
-  @include mixins.tablet {
-    @include mixins.tablet-desktop-body-large;
-  }
-}
-p2 {
   display: block;
   @include mixins.mobile-body-medium;
   @include mixins.tablet {
     @include mixins.tablet-desktop-body-medium;
   }
 }
-p3 {
-  display: block;
-  @include mixins.mobile-body-small;
-  @include mixins.tablet {
-    @include mixins.tablet-desktop-body-small;
-  }
-}
+
 a {
   text-decoration: none;
   color: inherit;
