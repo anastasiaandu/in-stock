@@ -234,7 +234,6 @@ class InventoryForm extends Component {
                   }`}
                   value={this.state.category}
                   onChange={this.handleChange}
-                  defaultValue={"default"}
                   placeholder={
                     this.state.category ? this.state.category : "Please Select"
                   }
@@ -339,7 +338,6 @@ class InventoryForm extends Component {
                   name="warehouseName"
                   value={this.state.warehouseName}
                   onChange={this.handleChange}
-                  defaultValue={"default"}
                 >
                   <option disabled={true} value="">
                     Please Select
