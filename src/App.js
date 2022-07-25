@@ -5,7 +5,7 @@ import PageFooter from "./components/PageFooter/PageFooter";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
+import InventoriesDetailsPage from "./pages/InventoriesDetailsPage/InventoriesDetailsPage";
 import WarehouseFormPage from "./pages/WarehouseFormPage/WarehouseFormPage";
 import InventoryFormPage from "./pages/InventoryFormPage/InventoryFormPage";
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
             render={(params) => <InventoryFormPage status="add" {...params} />}
           />
 
-          <Route path="/inventory/:id" exact component={InventoryDetailsPage} />
+          <Route path="/inventory/:id" exact component={InventoriesDetailsPage} />
           <Route
             path="/inventory/:id/edit"
             render={(params) => <InventoryFormPage status="edit" {...params} />}
