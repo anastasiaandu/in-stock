@@ -1,9 +1,9 @@
 import './InventoryDetailsPage.scss';
-import InventoryDetails from '../../components/InventoryDetails/InventoryDetails';
+import InventoriesDetails from '../../components/InventoriesDetails/InventoriesDetails';
 
 const InventoryDetailsPage = (props) => {
     return (
-        <InventoryDetails inventoryId={props.match.params.id}/>
+        <InventoriesDetails inventoryId={props.match.params.id}/>
     );
 };
 
