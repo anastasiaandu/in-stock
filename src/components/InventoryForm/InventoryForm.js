@@ -185,9 +185,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -220,9 +220,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -260,9 +260,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
@@ -323,9 +323,9 @@ class InventoryForm extends Component {
                         alt="Error Asteric"
                         className="inventory-form__error-icon"
                       />
-                      <p3 className="inventory-form__error-text">
+                      <p className="inventory-form__error-text">
                         This field is required
-                      </p3>
+                      </p>
                     </div>
                   )}
                 </div>
@@ -364,9 +364,9 @@ class InventoryForm extends Component {
                       alt="Error Asteric"
                       className="inventory-form__error-icon"
                     />
-                    <p3 className="inventory-form__error-text">
+                    <p className="inventory-form__error-text">
                       This field is required
-                    </p3>
+                    </p>
                   </div>
                 )}
               </div>
