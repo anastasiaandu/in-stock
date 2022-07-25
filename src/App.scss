@@ -1,0 +1,20 @@
+@use "./partials/global" as *;
+@use "./partials/mixins" ;
+
+.main-container{
+    padding: 0 1rem;
+    margin-top: -3.75rem;
+
+    @include mixins.tablet {
+        padding: 0 2rem;
+        margin-top: -5rem;
+    }
+
+    @include mixins.desktop {
+        padding: 0 8rem;
+    }
+    @include mixins.desktop {
+        padding: 0 8.125rem;
+        margin-top: -6rem;
+    }
+}

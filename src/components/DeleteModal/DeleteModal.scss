@@ -1,0 +1,104 @@
+@use "../../partials/colors";
+@use "../../partials/mixins";
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  background-color: colors.$primaryLightColor;
+  background-attachment: fixed;
+
+  @include mixins.tablet {
+    padding: auto;
+    padding-top: 20%;
+    background-color: rgba(19, 24, 44, 0.7);
+  }
+
+  &__question {
+    margin: 1.5rem 0;
+    width: 100%;
+
+    @include mixins.tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__verify {
+    @include mixins.tablet {
+        width: 85%;
+      }
+  }
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: colors.$primaryLightColor;
+    @include mixins.tablet {
+      height: 16.5rem;
+      width: 42rem;
+      padding: 1rem 4rem 2.5rem 4rem;
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__close-icon {
+    position: relative;
+
+    @include mixins.tablet {
+        right: -3rem;
+    }
+    
+  }
+
+  &__actions {
+    display: flex;
+    @include mixins.tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cancel {
+    width: 50%;
+    @include mixins.add-button;
+    margin-right: 0.5rem;
+    border: 1px solid colors.$secondaryLightColor;
+    background-color: colors.$primaryLightColor;
+    color: colors.$secondaryDarkColor;
+    @include mixins.tablet {
+      height: 2.375rem;
+      width: 4.5rem;
+    }
+
+    &:hover {
+        color: colors.$primaryLightColor;
+    }
+  }
+
+  &__confirm {
+    width: 50%;
+    @include mixins.add-button;
+    margin-left: 0.5rem;
+    background-color: colors.$errorColor;
+    color: colors.$primaryLightColor;
+    @include mixins.tablet {
+      height: 2.375rem;
+      width: 4.5rem;
+    }
+  }
+}
